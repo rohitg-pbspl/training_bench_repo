@@ -7,7 +7,85 @@ from frappe import _
 
 class ServerSideScripting(Document):
     pass
-	
+
+################# DOCUMENT METHODS #########################################
+ 
+# 1. doc.insert()
+# frappe.new_doc("doctype")
+# Create New Document in Client side Scripting Using Server Side Script
+
+    # def validate(self):
+        # self.new_document()
+        
+    # def new_document(self):
+    #     doc = frappe.new_doc('Client Side Scripting')
+    #     doc.first_name = "Jake"
+    #     doc.last_name = "Jay"
+    #     doc.age = 25
+    #     doc.append("family_members", {
+    #         "name1" : "jain",
+    #         "relation" : "Sister",
+    #         "age" : 21
+    #     })
+    #     doc.insert()
+    
+    # some escape hatches that can be used to skip certain checks
+    # doc.insert(
+    #     ignore_permissions = True, # ignore write permissions during insert
+    #     ignore_links = True, # ignore link validation in document
+    #     igonre_if_duplicate = True # dont insert id DuplicateEntryError is thrown
+    #     ignore_if_mandatory = True # insert even if mandatory fields are not set
+    # )
+ 
+ 
+ # 2. frappe.get_doc(doctype, name)
+ # Returns a Document objetc of record identified by doctype and name
+ 
+    # def validate(self):
+        # self.get_document()
+        
+    # def get_document(self):
+        # doc = frappe.get_doc('Client Side Scripting', self.client_side_doc)
+        
+        # frappe.msgprint(_("The first name is {0} and age is {1}").format(doc.first_name, doc.age))
+        
+        # for row in doc.get("family_members"):
+        #     frappe.msgprint(_("{0}. The family member name is '{1}' and relation is '{2}'").format(row.idx, row.name1, row.relation))
+       
+        
+# 3. frappe.delete_doc("doctype", "name")
+# Delete doc with specific name from doctype list
+
+    # def validate(self):
+        # frappe.delete_doc("Client Side Scripting", "CLIENT-000001")
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  ########## EVENTS ############
  
     # def validate(self):

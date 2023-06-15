@@ -7,55 +7,56 @@ frappe.ui.form.on('Client Side Scripting', {
 	///////////////////////////////////////// SET INTRO & IS NEW ///////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	refresh: function(frm) {
+	// refresh: function(frm) {
 
 		// frm.set_intro('Now you can create new Client Side Scripting doctype', 'blue');
 
+	// 	if (frm.is_new()){
+	// 		frm.set_intro('Now you can create new Client Side Scripting doctype', 'blue');
+	// 	}
 
-		if (frm.is_new()){
-			frm.set_intro('Now you can create new Client Side Scripting doctype', 'blue');
-		}
+	// },
 
-	},
-
-	validate: function (frm) {
-		frm.set_value('full_name', frm.doc.first_name + " " + frm.doc.middle_name + " " + frm.doc.last_name)
+	// validate: function (frm) {
+		// frm.set_value('full_name', frm.doc.first_name + " " + frm.doc.middle_name + " " + frm.doc.last_name)
 
 		// let row = frm.add_child('family_members', {
 		// 	name1 : 'Prafulla Gunjegaonkar',
 		// 	relation : 'Father',
 		// 	age : 55
 		// })
-	},
+	// },
+
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////// SET DF PROPERTY /////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	// enable: function(frm) {
 		// frm.set_df_property('first_name', 'reqd', 1)
 		// frm.set_df_property('middle_name', 'read_only', 1)
 		// frm.toggle_reqd('age', true)
 	// },
 
+
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////// ADD BUTTON //////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	refresh: function(frm) {
+	// refresh: function(frm) {
 
 	// 	frm.add_custom_button('Click Me Button', () => {
 	// 		frappe.msgprint(__('You Clicked Me!!'));
 	// 	})
 
-	frm.add_custom_button('Click Me 1!!',() => { 
-		frappe.msgprint(__('You Clicked 1'));
-	}, 'click me')
-	frm.add_custom_button('Click Me 2!!',() => { 
-		frappe.msgprint(__('You Clicked 2'));
-	}, 'click me')
+	// frm.add_custom_button('Click Me 1!!',() => { 
+	// 	frappe.msgprint(__('You Clicked 1'));
+	// }, 'click me')
+	// frm.add_custom_button('Click Me 2!!',() => { 
+	// 	frappe.msgprint(__('You Clicked 2'));
+	// }, 'click me')
 
-	},	
-
+	// },	
 
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,48 +68,49 @@ frappe.ui.form.on('Client Side Scripting', {
 	// 	frappe.msgprint("Refresh Event")
 
 	// },
+
+
 	// onload: function(frm) {
 
 	// 	frappe.msgprint("Onload Event")
 
 	// },
+
+
 	// validate: function(frm) {
 
 	// 	frappe.throw("Validate Event")
 
 	// },
+
+
 	// before_save: function(frm) {
 
 	// 	frappe.throw("Before Save Event")
 
 	// },
+
+
 	// after_save: function(frm) {
 
 		// frappe.throw("After Save Event")
 
-		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////// VALUE FETCHING //////////////////////////////////////////////////
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		// 	frappe.msgprint(__("The Full Name is '{0}' ", [frm.doc.first_name + " " +frm.doc.middle_name + " " +frm.doc.last_name]))
-
-		// for (let row of frm.doc.family_members) {
-		// 	frappe.msgprint(__("{0}. The Family Member Name is '{1}' and relation is '{2}'", [row.idx, row.name1, row.relation]))
-		// }
-
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 	// },
+
+
 	// enable: function(frm) {
 
 	// 	frappe.msgprint("enable field Event")
 
 	// },
+
+
 	// age: function(frm) {
 
 	// 		frappe.msgprint("age field Event")
 	
 	// },
+
 
 	// On child table rendering the field row
 
@@ -119,33 +121,53 @@ frappe.ui.form.on('Client Side Scripting', {
     //     frappe.msgprint("Family member field rendering Event")
 
     // },
+
+
 	// before_submit: function(frm) {
 
 	// 		frappe.throw("Before Submit Event")
 	
 	// },
+
+
 	// on_submit: function(frm) {
 
 	// 	frappe.msgprint("On Submit Event")
 
 	// },
+
+
 	// before_cancel: function(frm) {
 
 	// 	frappe.throw("Before Cancel Event")
 
 	// },
+
+
 	// after_cancel: function(frm) {
 
 	// 	frappe.msgprint("After Cancel Event")
 
 	// },
 
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////// VALUE FETCHING //////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// after_save: function(frm){
+
+	// 	frappe.msgprint(__("The Full Name is '{0}' ", [frm.doc.first_name + " " +frm.doc.middle_name + " " +frm.doc.last_name]))
+
+	// 	for (let row of frm.doc.family_members) {
+
+	// 		frappe.msgprint(__("{0}. The Family Member Name is '{1}' and relation is '{2}'", [row.idx, row.name1, row.relation]))
+		// }
+	// }
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 });
-
-
-
-
-
 
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,17 +175,18 @@ frappe.ui.form.on('Client Side Scripting', {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	// frappe.ui.form.on('Family Members', { 
+
 	// name1: function(frm) {
 
 	// 	frappe.msgprint("Field Child Table Event")
 
 	// },
 
+
 	// age (frm, cdt, cdn) {
+
 	// 	frappe.msgprint("Field Child Table Event")
+
 	// }
-
-
-
 
 // });
