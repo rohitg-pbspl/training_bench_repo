@@ -85,13 +85,13 @@ class ServerSideScripting(Document):
  # frappe.get_doc(doctype, name)
  # Returns a Document objetc of record identified by doctype and name
  
-    # def validate(self):
-        # self.get_document()
+    def validate(self):
+        self.get_document()
         
-    # def get_document(self):
-        # doc = frappe.get_doc('Client Side Scripting', self.client_side_doc)
+    def get_document(self):
+        doc = frappe.get_doc('Client Side Scripting', self.client_side_doc)
         
-        # frappe.msgprint(_("The first name is {0} and age is {1}").format(doc.first_name, doc.age))
+        frappe.msgprint(_("The first name is {0} and age is {1}").format(doc.first_name, doc.age))
         
         # for row in doc.get("family_members"):
         #     frappe.msgprint(_("{0}. The family member name is '{1}' and relation is '{2}'").format(row.idx, row.name1, row.relation))
@@ -175,6 +175,69 @@ class ServerSideScripting(Document):
     #     first_name, age = frappe.db.get_value('Client Side Scripting', "CSC0008", ['first_name', 'age'])
     #     frappe.msgprint(_("First Name is {0} and age is {1}").format(first_name, age))
     #     print(first_name, age)
+    
+    
+
+
+############################################## SET VALUE #######################################################
+
+# frappe.db.set_value(doctype, name, fieldname, value)
+
+    # def validate(self):
+    #     self.set_value()
+    
+    # def set_value(self):
+    #     frappe.db.set_value('Client Side Scripting', 'CSC0001', 'age', 78)
+        
+    #     first_name, age = frappe.db.get_value('Client Side Scripting', "CSC0001", ['first_name', 'age'])
+    #     frappe.msgprint(_("First Name is {0} and age is {1}").format(first_name, age))
+    #     print(first_name, age)
+    
+    
+    
+######################################## DOES EXISTS #############################################################
+
+# frappe.db.exists(doctype, name)
+
+    # def validate(self):
+    #     if frappe.db.exists('Client Side Scripting', 'CSC-0001'):
+    #         frappe.msgprint(_("Document exists in database"))
+    #     else:
+    #         frappe.msgprint(_('Document does not exists in database'))
+    
+    
+    
+############################ COUNT ENTRIES #########################################################################
+
+# frappe.doctype.count(doctype, filters)
+    
+    # def validate(self):
+    #     count = frappe.db.count('Client Side Scripting', {'enable':1})
+    #     frappe.msgprint(_("There are {0} Client Side Scripting").format(count))
+    
+    
+    
+############################## GET DATA USING SQL QUERIES ###########################################################
+
+# frappe.db.sql(query, filters, as_dict)
+
+    # def validate(self):
+    #     self.sql()
+    
+    # def sql(self):
+    #     data= frappe.db.sql(""" SELECT 
+    #                                 first_name, age 
+    #                             FROM 
+    #                                 `tabClient Side Scripting`
+    #                             WHERE 
+    #                                 enable=1 """, as_dict=1)
+                            
+    #     for d in data:
+    #         frappe.msgprint(_("The Parent First Name is {0} and age is {1}").format(d.first_name, d.age))
+    
+    
+        
+        
             
         
     
